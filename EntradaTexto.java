@@ -25,6 +25,10 @@ public class EntradaTexto extends Entrada
         return mensaje;
     }
 
+	public void mostrarAutorYMensaje(){
+		System.out.println("Autor: " + getUsuario() + "\n\n" + "Mensaje: \n" + mensaje);
+	}
+
     public String toStringg()
     {
         String cadenaADevolver = "";
