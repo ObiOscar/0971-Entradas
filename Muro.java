@@ -32,9 +32,24 @@ public class Muro
         fotos.add(entradaFoto);
     }
     
-    public void toStrigg()
+    public String toStrigg()
     {
+        String cadenaADevolver = "";
         
+        for(EntradaTexto entrada : mensajes){
+           cadenaADevolver += entrada + "\n";
+        }
+        
+         for(EntradaFoto entrada : fotos){
+           cadenaADevolver += entrada + "\n";
+        }
+        
+        return cadenaADevolver;
+    }
+    
+    public void mostrar ()
+    {
+        System.out.println(this);
     }
     
 }
