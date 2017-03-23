@@ -28,6 +28,14 @@ public class EntradaUnionAGrupo extends Entrada
         System.out.println(toString());
     }
     
+    public int getCantidadDeDatosAsociadosALaEntrada(){
+        return 4;
+    }
+    
+    public void mostrarDatosExclusivos (){
+      System.out.println("El dato exclusivo es: " + grupo+"\n");
+    }
+    
     public String toString()
     {
         String cadenaADevolver = "";

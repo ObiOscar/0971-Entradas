@@ -35,6 +35,14 @@ public class EntradaFoto extends EntradaConComentario
     public void mostrar(){
         System.out.println(toString());
     }
+    
+    public int getCantidadDeDatosAsociadosALaEntrada(){
+        return 6;
+    }
+    
+    public void mostrarDatosExclusivos (){
+      System.out.println("Los datos exclusivos son: " + titulo +" y "+ urlImagen+ "\n");
+    }
 
     public String toString()
     {
@@ -43,8 +51,6 @@ public class EntradaFoto extends EntradaConComentario
         cadenaADevolver += super.toString();  
 		cadenaADevolver += titulo +"\n";
 		cadenaADevolver += urlImagen +"\n";
-
-
 
         return cadenaADevolver;
     } 

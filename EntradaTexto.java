@@ -32,6 +32,14 @@ public class EntradaTexto extends EntradaConComentario
     public void mostrar(){
         System.out.println(toString());
     }
+    
+    public int getCantidadDeDatosAsociadosALaEntrada(){
+        return 5;
+    }
+    
+    public void mostrarDatosExclusivos (){
+      System.out.println("El dato exclusivo es: " + mensaje+"\n");
+    }
 
     public String toString()
     {

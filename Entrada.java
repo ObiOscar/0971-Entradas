@@ -54,6 +54,10 @@ public class Entrada
     
     }
     
+    public int getCantidadDeDatosAsociadosALaEntrada(){
+        return 3;
+    }
+    
     public String toString()
     {
        String cadenaADevolver = "";
