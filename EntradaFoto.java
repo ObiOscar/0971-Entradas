@@ -31,35 +31,21 @@ public class EntradaFoto extends EntradaConComentario
     {
         return titulo;
     }
+    
+    public void mostrar(){
+        System.out.println(toString());
+    }
 
-    public String toStringg()
+    public String toString()
     {
         String cadenaADevolver = "";
         
-        cadenaADevolver += "Usuario: " + getUsuario() + "\n";
+        cadenaADevolver += super.toString();  
 		cadenaADevolver += titulo +"\n";
 		cadenaADevolver += urlImagen +"\n";
-        cadenaADevolver += getMeGusta() + " me gusta";
-        
-        long segundosQueHanPasado = momentoPublicacion().until(LocalDateTime.now(), ChronoUnit. SECONDS);
-        long minutossQueHanPasado = segundosQueHanPasado /60;
-        long segundosResiduos = segundosQueHanPasado % 60;
-        
-        cadenaADevolver += "Hace";
-        if(minutossQueHanPasado >0){
-            cadenaADevolver += minutossQueHanPasado +  "minutos";
-        }
-        cadenaADevolver += segundosResiduos + " segundos.\n";
-        
-        if(getComentarios().isEmpty()){
-            cadenaADevolver += "La entrada no tiene comentarios";
-        }
-        else{
-            cadenaADevolver+= "Comentarios : \n";
-         for(String comentario : getComentarios()){
-            cadenaADevolver += comentario + "\n";
-            }
-        }
+
+
+
         return cadenaADevolver;
     } 
     

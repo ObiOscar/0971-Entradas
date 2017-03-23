@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class EntradaConComentario extends EntradaSinComentario
+public class EntradaConComentario extends Entrada
 {
     // instance variables - replace the example below with your own
 
@@ -25,10 +25,22 @@ public class EntradaConComentario extends EntradaSinComentario
 		return comentarios;
 	}
     
-    public String toStringg()
+    public String toString()
     {
        String cadenaADevolver = "";
-                
+       
+       cadenaADevolver +=super.toString();
+        
+               if(getComentarios().isEmpty()){
+            cadenaADevolver += "La entrada no tiene comentarios";
+        }
+        else{
+            cadenaADevolver+= "Comentarios : \n";
+         for(String comentario : getComentarios()){
+            cadenaADevolver += comentario + "\n";
+            }
+        }
+        
        return cadenaADevolver;
     }
     

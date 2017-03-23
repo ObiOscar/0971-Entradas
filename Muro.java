@@ -7,43 +7,28 @@ import java.util.ArrayList;
  */
 public class Muro
 {
-    // instance variables - replace the example below with your own
-    private ArrayList<EntradaTexto> mensajes;
-    
-    private ArrayList<EntradaFoto> fotos;
+    private ArrayList<Entrada> miArrayList;         //Guardará objetos Entrada, ya sea entradadaConComentario o sus subclases o EntradaUnionAgrupo
 
     /**
      * Constructor for objects of class Muro
      */
     public Muro()
     {
-        // initialise instance variables
-        mensajes = new ArrayList<EntradaTexto>();
-        fotos = new ArrayList<EntradaFoto>();
+        miArrayList = new ArrayList<Entrada>();
     }
     
-    public void addEntradaTexto(EntradaTexto entradaTexto)
+    public void addEntrada(Entrada nuevaEntrada)
     {
-        mensajes.add(entradaTexto);
+        miArrayList.add(nuevaEntrada);
     }
     
-    public void addEntradaFoto(EntradaFoto entradaFoto)
-    {
-        fotos.add(entradaFoto);
-    }
-    
-    public String toStrigg()
+    public String toString()
     {
         String cadenaADevolver = "";
         
-        for(EntradaTexto entrada : mensajes){
+        for(Entrada entrada : miArrayList){
            cadenaADevolver += entrada + "\n";
         }
-        
-         for(EntradaFoto entrada : fotos){
-           cadenaADevolver += entrada + "\n";
-        }
-        
         return cadenaADevolver;
     }
     

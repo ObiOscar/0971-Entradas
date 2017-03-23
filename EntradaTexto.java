@@ -25,37 +25,24 @@ public class EntradaTexto extends EntradaConComentario
         return mensaje;
     }
 
-	public void mostrarAutorYMensaje(){
-		System.out.println("Autor: " + getUsuario() + "\n\n" + "Mensaje: \n" + mensaje);
-	}
+    public void mostrarAutorYMensaje(){
+        System.out.println("Autor: " + getUsuario() + "\n\n" + "Mensaje: \n" + mensaje);
+    }
+    
+    public void mostrar(){
+        System.out.println(toString());
+    }
 
-    public String toStringg()
+    public String toString()
     {
         String cadenaADevolver = "";
         
-        cadenaADevolver += "Usuario: " + getUsuario() + "\n";
+        cadenaADevolver += super.toString();  
+ 
         cadenaADevolver += mensaje + "\n"; 
-        cadenaADevolver += momentoPublicacion() + " me gusta";
+
+
         
-        long segundosQueHanPasado = momentoPublicacion().until(LocalDateTime.now(), ChronoUnit. SECONDS);
-        long minutossQueHanPasado = segundosQueHanPasado /60;
-        long segundosResiduos = segundosQueHanPasado % 60;
-        
-        cadenaADevolver += "Hace";
-        if(minutossQueHanPasado >0){
-            cadenaADevolver += minutossQueHanPasado +  "minutos";
-        }
-        cadenaADevolver += segundosResiduos + " segundos.\n";
-        
-        if(getComentarios().isEmpty()){
-            cadenaADevolver += "La entrada no tiene comentarios";
-        }
-        else{
-            cadenaADevolver+= "Comentarios : \n";
-         for(String comentario : getComentarios()){
-            cadenaADevolver += comentario + "\n";
-            }
-        }
         return cadenaADevolver;
     } 
 }
