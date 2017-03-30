@@ -58,24 +58,45 @@ public class Entrada
         return 3;
     }
     
-    public String toString()
+   /* public String imprimirPagina()
     {
        String cadenaADevolver = "";
        
-       cadenaADevolver += "\nEl Usuario: " + getUsuario() + "\n";   
-       cadenaADevolver += getMeGusta() + " me gusta";
+
+       cadenaADevolver += "<dd><b>\nEl Usuario: " + getUsuario() + "\n</b> <table summary= border=";   
+       cadenaADevolver += "<b>"+getMeGusta()+ "</b>" + " me gusta";
        
+        long segundosQueHanPasado = momentoPublicacion().until(LocalDateTime.now(), ChronoUnit. SECONDS);
+        long minutossQueHanPasado = segundosQueHanPasado /60;
+        long segundosResiduos = segundosQueHanPasado % 60;
+        
+        cadenaADevolver += " <small> Hace ";
+        if(minutossQueHanPasado >0){
+            cadenaADevolver += minutossQueHanPasado +  "minutos";
+        }
+        cadenaADevolver += segundosResiduos + " segundos.\n <small>";
+                  
+       return cadenaADevolver;
+    }*/
+    
+    
+     public String toString()
+     {
+       String cadenaADevolver = "";                
+       cadenaADevolver +="<img src=" + "usuario.png " + "alt=" + "fotoUsuario.png " + "width=10% height=10% align =left> <br/><h2>  El Usuario: <em>" + getUsuario() + "</em> </h2></b>";   
+       cadenaADevolver +="<i><small>" + getMeGusta() + " me gusta </i>";
+
         long segundosQueHanPasado = momentoPublicacion().until(LocalDateTime.now(), ChronoUnit. SECONDS);
         long minutossQueHanPasado = segundosQueHanPasado /60;
         long segundosResiduos = segundosQueHanPasado % 60;
         
         cadenaADevolver += " Hace ";
         if(minutossQueHanPasado >0){
-            cadenaADevolver += minutossQueHanPasado +  "minutos";
+            cadenaADevolver += minutossQueHanPasado +  " minuto(s) y ";
         }
-        cadenaADevolver += segundosResiduos + " segundos.\n";
+        cadenaADevolver += segundosResiduos + " segundos.\n<br/>" + "</small>" + "<br/>";
                   
-       return cadenaADevolver;
-    }
-    
+       return cadenaADevolver; 
+      }           
 }
+    

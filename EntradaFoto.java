@@ -44,13 +44,25 @@ public class EntradaFoto extends EntradaConComentario
       System.out.println("Los datos exclusivos son: " + titulo +" y "+ urlImagen+ "\n");
     }
 
-    public String toString()
+/*    public String imprimirPagina()
     {
         String cadenaADevolver = "";
         
-        cadenaADevolver += super.toString();  
+        cadenaADevolver += super.imprimirPagina();  
 		cadenaADevolver += titulo +"\n";
 		cadenaADevolver += urlImagen +"\n";
+
+        return cadenaADevolver;
+    }*/
+    
+        public String toString()
+    {
+        String cadenaADevolver = "";
+        
+        cadenaADevolver += super.toString(); 
+        cadenaADevolver +="<b>" + titulo + ":</b>" + "\n <br/>";  
+        cadenaADevolver +="<span class= " + "nota " + "> <a href=" + urlImagen + ">" + urlImagen + "</a></span>" + "<br/><br/><span style=" + "font-weight:bold; color:navy ></span>" + "<hr align=" + "left " + "noshade=" + "noshade " + "size=" +"2 " + "width=" + "105% />" + "</p> <br/>"; 
+			
 
         return cadenaADevolver;
     } 
