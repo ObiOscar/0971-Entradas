@@ -58,29 +58,29 @@ public class Entrada
         return 3;
     }
     
-   /* public String imprimirPagina()
+    public String toString()
     {
        String cadenaADevolver = "";
        
 
-       cadenaADevolver += "<dd><b>\nEl Usuario: " + getUsuario() + "\n</b> <table summary= border=";   
-       cadenaADevolver += "<b>"+getMeGusta()+ "</b>" + " me gusta";
+       cadenaADevolver += "El Usuario: " + getUsuario() + "\n";   
+       cadenaADevolver += getMeGusta() + " me gusta";
        
         long segundosQueHanPasado = momentoPublicacion().until(LocalDateTime.now(), ChronoUnit. SECONDS);
         long minutossQueHanPasado = segundosQueHanPasado /60;
         long segundosResiduos = segundosQueHanPasado % 60;
         
-        cadenaADevolver += " <small> Hace ";
+        cadenaADevolver += " Hace ";
         if(minutossQueHanPasado >0){
             cadenaADevolver += minutossQueHanPasado +  "minutos";
         }
-        cadenaADevolver += segundosResiduos + " segundos.\n <small>";
+        cadenaADevolver += segundosResiduos + " segundos.\n";
                   
        return cadenaADevolver;
-    }*/
+    }
     
     
-     public String toString()
+     public String mostrarPagina()
      {
        String cadenaADevolver = "";                
        cadenaADevolver +="<img src=" + "usuario.png " + "alt=" + "fotoUsuario.png " + "width=10% height=10% align =left> <br/><h2>  El Usuario: <em>" + getUsuario() + "</em> </h2></b>";   

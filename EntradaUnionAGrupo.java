@@ -40,9 +40,21 @@ public class EntradaUnionAGrupo extends Entrada
     {
         String cadenaADevolver = "";
         
-        cadenaADevolver += super.toString();  
+        cadenaADevolver += super.toString();
+        cadenaADevolver += "Se ha unido al grupo " + grupo + ".\n";
+        
+        return cadenaADevolver;
+    }
+    
+    public String mostrarPagina()
+    {
+        String cadenaADevolver = "";
+        
+        cadenaADevolver += super.mostrarPagina();  
         cadenaADevolver +="<b>"+ "Se ha unido a: " + "<big>" + grupo + "</big>" + "</b>" + "<hr align=" + "left " + "noshade=" + "noshade " + "size=" +"2 " + "width=" + "105% />" + "\n <br/>"; 
        
         return cadenaADevolver;
-        }
+    }
+    
+    
 }

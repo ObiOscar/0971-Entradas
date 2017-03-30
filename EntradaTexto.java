@@ -41,24 +41,20 @@ public class EntradaTexto extends EntradaConComentario
       System.out.println("El dato exclusivo es: " + mensaje+"\n");
     }
     
-/*        public String imprimirPagina()
-    {
-        String cadenaADevolver = "";
-        cadenaADevolver += "<dl><dt>Comentarios De Texto</dt>";    
-        cadenaADevolver += super.imprimirPagina();  
- 
-        cadenaADevolver +="<tr><td><strong>"+ mensaje + "\n </strong></td></tr></table></dd>"; 
-
-
-        
-        return cadenaADevolver;
-    } */
-
     public String toString()
     {
+        String cadenaADevolver = "";   
+        cadenaADevolver += super.toString();  
+        cadenaADevolver += mensaje + "\n"; 
+
+        return cadenaADevolver;
+    } 
+
+    public String mostrarPagina()
+    {
         String cadenaADevolver = "";
         
-        cadenaADevolver += super.toString();  
+        cadenaADevolver += super.mostrarPagina();  
         cadenaADevolver +="<span style=" + "font-weight:bold; color:#5C84E9>" + mensaje + "</span>" + "<hr align=" + "left " + "noshade=" + "noshade " + "size=" +"2 " + "width=" + "105% />" + "</p> <br/>"; 
 
 

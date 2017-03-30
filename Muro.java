@@ -8,6 +8,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.FileReader;
 import java.io.BufferedReader;
+ import java.lang.Runtime;
 
 /**
  * Write a description of class Muro here.
@@ -47,14 +48,14 @@ public class Muro
         return cadenaADevolver;
     }
     
-/*    public String imprimirPagina()
+    public String mostrarPagina()
     {
         String cadenaADevolver = "";
         for(Entrada entrada : miArrayList){
-           cadenaADevolver += entrada + "\n";
+           cadenaADevolver += entrada.mostrarPagina() + "\n";
         }
         return cadenaADevolver;
-    }*/
+    }
     
     public void mostrarDatosExclusivosEntradasFiltradas(String tipoEntrada, String nombre){
        for(Entrada entrada : miArrayList){
@@ -77,11 +78,20 @@ public class Muro
        }
     }
     
+    /*public void mostrarMuroEnNavegador(){
+
+        try{
+
+        }
+        catch(IOException excepcion){
+            System.out.println(excepcion.toString());
+        }A:/Program Files (x86)/Desarrollo_de_Aplicaciones_Multiplataforma/Programación/actividad-0971/miRedSocial.html"
+    }*/
+
+    
     public void mostrarMuroEnNavegador(){
         // Obtenemos una referencia a una ruta donde estará el archivo
-
         Path rutaArchivo = Paths.get("miRedSocial.html");
-
 
         // Abrimos el archivo, escribimos en él y lo cerramos. Si se produce una
         try  
@@ -95,13 +105,24 @@ public class Muro
             while((linea=guardadaLecturaMiHtml.readLine())!=null){
                archivo.write(linea);
             }
-            archivo.write(toString());
-			archivo.write("</div><div id=" + "footer" + ">Trabajo programacion &copy; 2017.</div></body></html>");
+            archivo.write(mostrarPagina());
+            archivo.write("</div><div id=" + "footer" + ">Trabajo programacion &copy; 2017.</div></body></html>");
             archivo.close();
+
         }
         catch (IOException excepcion) {
             // Mostramos por pantalla la excepción que se ha producido
             System.out.println(excepcion.toString());
+        }
+        
+        try 
+        {
+            String cmd = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome " + "file:///A:/Program%20Files%20(x86)/Desarrollo_de_Aplicaciones_Multiplataforma/Programaci%C3%B3n/actividad%200971/miRedSocial.html" ;
+            Runtime.getRuntime().exec(cmd); 
+        } 
+        catch (IOException ioe) 
+        {
+            System.out.println (ioe);
         }
     
     }

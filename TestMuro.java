@@ -20,6 +20,15 @@ public class TestMuro
     private EntradaUnionAGrupo entradaU1;
     private EntradaUnionAGrupo entradaU2;
     private Muro muro1;
+    private EntradaFoto entradaF3;
+
+    
+    
+    
+    
+    
+    
+    
 
     /**
      * Default constructor for test class TestMuro
@@ -50,7 +59,8 @@ public class TestMuro
         muro1.mostrar();
         muro1.addEntrada(entradaU1);
         muro1.addEntrada(entradaU2);
-        
+        entradaF3 = new EntradaFoto("oscar", "https://www.cleverfiles.com/howto/wp-content/uploads/2016/08/mini.jpg", "No me pongas mas pegas Miguel");
+        muro1.addEntrada(entradaF3);
     }
 
     /**

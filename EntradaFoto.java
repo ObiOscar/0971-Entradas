@@ -44,24 +44,24 @@ public class EntradaFoto extends EntradaConComentario
       System.out.println("Los datos exclusivos son: " + titulo +" y "+ urlImagen+ "\n");
     }
 
-/*    public String imprimirPagina()
+    public String toString()
     {
         String cadenaADevolver = "";
         
-        cadenaADevolver += super.imprimirPagina();  
+        cadenaADevolver += super.toString();  
 		cadenaADevolver += titulo +"\n";
 		cadenaADevolver += urlImagen +"\n";
 
         return cadenaADevolver;
-    }*/
+    }
     
-        public String toString()
+        public String mostrarPagina()
     {
         String cadenaADevolver = "";
         
-        cadenaADevolver += super.toString(); 
+        cadenaADevolver += super.mostrarPagina(); 
         cadenaADevolver +="<b>" + titulo + ":</b>" + "\n <br/>";  
-        cadenaADevolver +="<span class= " + "nota " + "> <a href=" + urlImagen + ">" + urlImagen + "</a></span>" + "<br/><br/><span style=" + "font-weight:bold; color:navy ></span>" + "<hr align=" + "left " + "noshade=" + "noshade " + "size=" +"2 " + "width=" + "105% />" + "</p> <br/>"; 
+        cadenaADevolver +="<span class= " + "nota " + "> <a href=\"" +urlImagen + "\">" + "<img src=\"" +urlImagen + "\"" + "width=40% height=40%/>" + "</a></span>" + "<br/><br/><span style=" + "font-weight:bold; color:navy ></span>" + "<hr align=" + "left " + "noshade=" + "noshade " + "size=" +"2 " + "width=" + "105% />" + "</p> <br/>"; 
 			
 
         return cadenaADevolver;

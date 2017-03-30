@@ -25,14 +25,14 @@ public class EntradaConComentario extends Entrada
 		return comentarios;
 	}
 	
-	/*public String imprimirPagina()
+	public String toString()
     {
        String cadenaADevolver = "";
        
-       cadenaADevolver +=super.imprimirPagina();
+       cadenaADevolver +=super.toString();
         
                if(getComentarios().isEmpty()){
-            cadenaADevolver += "<tr><td>La entrada no tiene comentarios\n </td></tr>";
+            cadenaADevolver += "La entrada no tiene comentarios\n";
         }
         else{
             cadenaADevolver+= "Comentarios : \n";
@@ -42,13 +42,13 @@ public class EntradaConComentario extends Entrada
         }
         
        return cadenaADevolver;
-    }*/
+    }
     
-    public String toString()
+    public String mostrarPagina()
     {
        String cadenaADevolver = "";
        
-       cadenaADevolver +=super.toString();
+       cadenaADevolver +=super.mostrarPagina();
         
                if(getComentarios().isEmpty()){
             cadenaADevolver += "<br/>La entrada no tiene comentarios\n" + "<br/><br/>";
