@@ -45,12 +45,12 @@ public class TestMuro
     @Before
     public void setUp()
     {
-        entradaT1 = new EntradaTexto("Oscar", "Hola a todos OSCAR");
-        entradaT2 = new EntradaTexto("Juan", "Hola a todos Juan");
-        entradaF1 = new EntradaFoto("Oscar", "www.google.com", "perros");
-        entradaF2 = new EntradaFoto("Juan", "www.google.com", "perros");
-        entradaU1 = new EntradaUnionAGrupo("Oscar", "Leoneses");
-        entradaU2 = new EntradaUnionAGrupo("juan", "programacion");
+       // entradaT1 = new EntradaTexto("Oscar", "Hola a todos OSCAR");
+       // entradaT2 = new EntradaTexto("Juan", "Hola a todos Juan");
+        //entradaF1 = new EntradaFoto("Oscar", "www.google.com", "perros");
+      //  entradaF2 = new EntradaFoto("Juan", "www.google.com", "perros");
+       // entradaU1 = new EntradaUnionAGrupo("Oscar", "Leoneses");
+       // entradaU2 = new EntradaUnionAGrupo("juan", "programacion");
         muro1 = new Muro();
         muro1.addEntrada(entradaT1);
         muro1.addEntrada(entradaT2);
@@ -59,7 +59,7 @@ public class TestMuro
         muro1.mostrar();
         muro1.addEntrada(entradaU1);
         muro1.addEntrada(entradaU2);
-        entradaF3 = new EntradaFoto("oscar", "https://www.cleverfiles.com/howto/wp-content/uploads/2016/08/mini.jpg", "No me pongas mas pegas Miguel");
+      //  entradaF3 = new EntradaFoto("oscar", "https://www.cleverfiles.com/howto/wp-content/uploads/2016/08/mini.jpg", "No me pongas mas pegas Miguel");
         muro1.addEntrada(entradaF3);
     }
 

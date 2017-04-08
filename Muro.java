@@ -8,7 +8,13 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.FileReader;
 import java.io.BufferedReader;
- import java.lang.Runtime;
+import java.lang.Runtime;
+import java.net.URL;
+import java.util.Scanner;
+import java.time.LocalDateTime;
+import java.time.LocalDate;
+
+
 
 /**
  * Write a description of class Muro here.
@@ -78,16 +84,70 @@ public class Muro
        }
     }
     
-    /*public void mostrarMuroEnNavegador(){
+    public void mostrarMuroEnNavegador(String nombreUsuario){
+        miArrayList.clear();                    //Elimino lo que haya en el arraylist
+        // Abrimos el archivo, escribimos en él y lo cerramos. Si se produce una
+        try  
+          {
+            URL acesoPagina = new URL("https://script.google.com/macros/s/AKfycbzHc3p1twTfyF7o0_cxSwnxSsyOemuHnSu406ly9DZIf5Ck2BA/exec?user="+nombreUsuario);
+            Scanner leerArchivo = new Scanner(acesoPagina.openStream());
+           // Lectura del fichero
+            String linea;
+           while(leerArchivo.hasNextLine()){
+              String lineaLeer = leerArchivo.nextLine();
 
-        try{
-
+              String[] cadenaAPartir = lineaLeer.split(";");
+              String buscandoEntrada = cadenaAPartir[0];
+              if(buscandoEntrada.equals("EntradaTexto")){ 
+                String autor = cadenaAPartir[1];
+                int meGusta = Integer.parseInt(cadenaAPartir[2]);
+                String fecha =cadenaAPartir[3]; 
+                String texto =cadenaAPartir[4];
+                EntradaTexto accesoTexto = new EntradaTexto(autor,meGusta,fecha,texto);
+                String[] comentarios = cadenaAPartir[5].split("%");
+                if(!comentarios[0].equals("Sin comentarios")){
+                    for (int contador = 0; comentarios.length > contador; contador++) {
+                         accesoTexto.addComentarios(comentarios[contador]);
+                    }
+                }
+                miArrayList.add(accesoTexto);
+              }
+              
+              if(buscandoEntrada.equals("EntradaUnionAGrupo")){ 
+                String autor = cadenaAPartir[1];
+                int meGusta = Integer.parseInt(cadenaAPartir[2]);              
+                String fecha =cadenaAPartir[3];
+                String grupo =cadenaAPartir[4];
+                Entrada accesoGrupo = new EntradaUnionAGrupo(autor,meGusta,fecha,grupo);
+                miArrayList.add(accesoGrupo);
+              }
+              
+              if(buscandoEntrada.equals("EntradaFoto")){ 
+                String autor = cadenaAPartir[1];
+                int meGusta = Integer.parseInt(cadenaAPartir[2]);             
+                String fecha =cadenaAPartir[3];
+                String url =cadenaAPartir[4];
+                String titulo=cadenaAPartir[5];
+                EntradaFoto accesoFoto = new EntradaFoto(autor,meGusta,fecha,url,titulo);
+                String[] comentarios = cadenaAPartir[6].split("%");
+                if(!comentarios[0].equals("Sin comentarios")){
+                    for (int contador = 0; comentarios.length > contador; contador++) {
+                         accesoFoto.addComentarios(comentarios[contador]);
+                    }
+                }
+                miArrayList.add(accesoFoto);
+              }
+           }
+           mostrarMuroEnNavegador();
+           leerArchivo.close();
         }
-        catch(IOException excepcion){
+        catch (IOException excepcion) {
+            // Mostramos por pantalla la excepción que se ha producido
             System.out.println(excepcion.toString());
-        }A:/Program Files (x86)/Desarrollo_de_Aplicaciones_Multiplataforma/Programación/actividad-0971/miRedSocial.html"
-    }*/
-
+           }
+    }
+    
+    
     
     public void mostrarMuroEnNavegador(){
         // Obtenemos una referencia a una ruta donde estará el archivo

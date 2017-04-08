@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
+import java.time.LocalDate;
 /**
  * Write a description of class EntradaTexto here.
  * 
@@ -11,18 +12,29 @@ public class EntradaTexto extends EntradaConComentario
 {
     private String mensaje;
 
-    /**
-     * Constructor for objects of class EntradaTexto
-     */
     public EntradaTexto(String autor, String texto)
     {
         super(autor);
         mensaje = texto;
     }
+    
+    /**
+     * Constructor for objects of class EntradaTexto
+     */
+    public EntradaTexto(String autor,int meGusta, String fecha, String texto)
+    {
+        super(autor,meGusta,fecha);
+        mensaje = texto;
+        
+    }
 
     public String getMensaje()
     {
         return mensaje;
+    }
+    
+    public void meGusta(){
+        super.meGusta();
     }
 
     public void mostrarAutorYMensaje(){
@@ -57,8 +69,6 @@ public class EntradaTexto extends EntradaConComentario
         cadenaADevolver += super.mostrarPagina();  
         cadenaADevolver +="<span style=" + "font-weight:bold; color:#5C84E9>" + mensaje + "</span>" + "<hr align=" + "left " + "noshade=" + "noshade " + "size=" +"2 " + "width=" + "105% />" + "</p> <br/>"; 
 
-
-        
         return cadenaADevolver;
     } 
 }

@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
+import java.time.LocalDate;
 /**
  * Write a description of class EntradaTexto here.
  * 
@@ -11,12 +12,18 @@ public class EntradaUnionAGrupo extends Entrada
 {
     private String grupo;
 
-    /**
-     * Constructor for objects of class EntradaTexto
-     */
     public EntradaUnionAGrupo(String autor, String grupo)
     {
         super(autor);
+        this.grupo=grupo;
+    }
+
+    /**
+     * Constructor for objects of class EntradaTexto
+     */
+    public EntradaUnionAGrupo(String autor, int meGusta, String fecha, String grupo)
+    {
+        super(autor,meGusta,fecha);
         this.grupo=grupo;
     }
 

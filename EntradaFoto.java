@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
+import java.time.LocalDate;
 /**
  * Write a description of class EntradaMuro here.
  * 
@@ -11,13 +12,20 @@ public class EntradaFoto extends EntradaConComentario
 {
     private String urlImagen;
     private String titulo;
+
+    public EntradaFoto(String autor, String url, String titulo)
+    {
+        super(autor);
+        urlImagen = url;
+        this.titulo = titulo;
+    }
     
     /**
      * Constructor for objects of class EntradaMuro
      */
-    public EntradaFoto(String autor, String url, String titulo)
+    public EntradaFoto(String autor, int meGusta, String fecha, String url, String titulo)
     {
-        super(autor);
+        super(autor,meGusta,fecha);
         urlImagen = url;
         this.titulo = titulo;
     }
