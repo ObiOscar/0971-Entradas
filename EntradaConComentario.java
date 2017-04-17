@@ -30,7 +30,6 @@ abstract class EntradaConComentario extends Entrada
     }
     
     public void addComentarios(String texto){
-        comentarios.clear();                    //Elimino lo que haya en el arraylist
         comentarios.add(texto);
     }
 
@@ -69,7 +68,7 @@ abstract class EntradaConComentario extends Entrada
         else{
             cadenaADevolver+= "Comentarios : \n" + "<br/>";
          for(String comentario : getComentarios()){
-            cadenaADevolver +="<span style=" + "font-weight:bold; color:#5C84E6>" + comentario + "\n<br/>";
+            cadenaADevolver +="<span style=" + "font-weight:bold; color:#5C84E6>" + comentario + "\n</span><br/>";
             }
         }
         

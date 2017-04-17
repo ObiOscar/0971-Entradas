@@ -109,7 +109,7 @@ abstract class Entrada
     public String mostrarPagina()
     {
        String cadenaADevolver = "";                
-       cadenaADevolver +="<img src=" + "usuario.png " + "alt=" + "fotoUsuario.png " + "width=10% height=10% align =left> <br/><h2>  El Usuario: <em>" + getUsuario() + "</em> </h2></b>";   
+       cadenaADevolver +="<img src=" + "usuario.png " + "alt=" + "fotoUsuario.png " + "width=10% height=10% align =left> <br/><h2>  El Usuario: <em>" + getUsuario() + "</em> </h2>";   
        cadenaADevolver +="<i><small>" + getMeGusta() + " me gusta </i>";
        
        boolean boleano = false;
